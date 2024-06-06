@@ -1,0 +1,12 @@
+01)- creat express + db + what i need in backand folder
+
+ 	- npm i express mongose cors bcrypt dotenv jsonwebtoken multer helmet morgan 
+
+02)- in package json add type: module
+
+03)- install nodemon : 
+	- npm i nodemon --save-dev
+
+04)- add in package json in scripts part
+	- "start": "node index.js",
+   	- "dev": "nodemon index.js"
