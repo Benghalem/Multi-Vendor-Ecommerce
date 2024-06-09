@@ -1,6 +1,6 @@
-import mongose from "mongoose"; // import mongoose
+import mongoose from "mongoose"; // import mongoose
 
-const brandSchema = new mongose.Schema(
+const brandSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -15,4 +15,4 @@ const brandSchema = new mongose.Schema(
   }
 );
 
-export const Brand = mongose.model("Brand", brandSchema)
+export const Brand = mongose.model("Brand", brandSchema);
