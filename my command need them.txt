@@ -10,3 +10,15 @@
 04)- add in package json in scripts part
 	- "start": "node index.js",
    	- "dev": "nodemon index.js"
+
+05)- creat Models
+
+06)- creat Controlles and install : 
+	- npm i express-async-handler
+
+
+07)-  This happened probably because the MongoDB service isn't started. Follow the  	below steps to start it:
+
+      Press the Windows + R keys on your keyboard to open the Run window. Type 	services.msc and hit Enter on your keyboard or click/tap the OK button. A new 	window opens up. Search MongoDB.exe. Right click on it and select Start.
+
+      The server will start. Now execute npm start again and the code might work this time.

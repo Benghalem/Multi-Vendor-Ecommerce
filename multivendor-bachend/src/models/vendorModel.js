@@ -1,6 +1,6 @@
-import mongose from "mongoose"; // import mongoose
+import mongoose from "mongoose"; // import mongoose
 
-const subscriptionSchema = new mongose.Schema(
+const subscriptionSchema = new mongoose.Schema(
   {
     plan: {
       type: String,
