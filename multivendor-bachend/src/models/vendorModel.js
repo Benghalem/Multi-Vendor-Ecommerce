@@ -1,6 +1,7 @@
-import mongoose from "mongoose"; // import mongoose
+import mongose from "mongoose"; // import mongoose
+import slugify from "slugify"; // import slugify
 
-const subscriptionSchema = new mongoose.Schema(
+const subscriptionSchema = new mongose.Schema(
   {
     plan: {
       type: String,
@@ -45,6 +46,14 @@ const vendorSchema = new mongose.Schema(
       type: String,
       required: true,
     },
+    slug: {
+      type: String,
+      unique: true,
+    },
+    storeBanner: {
+      type: String,
+      required: true,
+    },
     isVerified: {
       type: Boolean,
       default: false,
@@ -62,4 +71,9 @@ const vendorSchema = new mongose.Schema(
   }
 );
 
-export const Vonder = mongose.model("Vendor", vendorSchema);
+vendorSchema.pre("save", async function (next) {
+  this.slug = slugify(this.storName).toLowerCase();
+  next();
+});
+
+export const Vendor = mongose.model("Vendor", vendorSchema);

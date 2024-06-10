@@ -8,7 +8,9 @@ import {
   errorHandler,
   notFoundErrorhandler,
 } from "./src/middlewares/errorHandler.js"; // import error handler
+/* ==========  Import API Routes ========== */
 import userRouter from "./src/routes/userRouter.js"; // import user router
+import vendorRouter from "./src/routes/vendorRouter.js"; // import vendor router
 
 /* ========  Load Environment Variables from .env file ======== */
 dotenv.config();
@@ -27,6 +29,7 @@ app.use(cors());
 
 /* ========== API Routes ============= */
 app.use("/api/user", userRouter);
+app.use("/api/vendor", vendorRouter);
 
 /*  ========== Error handling middleware  =========*/
 app.use(notFoundErrorhandler); // Not fount error handler

@@ -2,6 +2,7 @@ import jwt from "jsonwebtoken";
 import { User } from "../models/useModel.js";
 import { AppError } from "./errorHandler.js";
 
+// protect middleware
 export const protect = async (req, res, next) => {
   let token;
   if (
@@ -14,18 +15,23 @@ export const protect = async (req, res, next) => {
       req.user = await User.findById(decoded.id).select("-password");
       next();
     } catch (error) {
-      throw new AppError("Not authorized ", 401);
+      res.status(401).json({ status: false, message: "Not Authorized" });
     }
   }
   if (!token) {
-    throw new AppError("Not token to access this route", 401);
+    res
+      .status(401)
+      .json({ status: false, message: "No Token Attached to the Header" });
+    /* throw new AppError("Not token to access this route", 401); */
   }
 };
 
 export const authorize = (...roles) => {
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {
-      throw new AppError("You don't have permission to access this route", 403);
+      res
+        .status(401)
+        .json({ status: false, message: "You don't have permission" });
     }
     next();
   };
