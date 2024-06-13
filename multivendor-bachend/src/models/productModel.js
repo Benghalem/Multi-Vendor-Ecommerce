@@ -1,4 +1,5 @@
 import mongose from "mongoose"; // import mongoose
+import slugify from "slugify";
 
 const prosuctVariationSchema = new mongose.Schema({
   color: {
@@ -26,6 +27,10 @@ const productSchema = new mongose.Schema(
       type: String,
       required: true,
     },
+    slug: {
+      type: String,
+      unique: true,
+    },
     description: String,
     vendor: {
       type: mongose.Schema.Types.ObjectId,
@@ -35,17 +40,14 @@ const productSchema = new mongose.Schema(
     category: {
       type: mongose.Schema.Types.ObjectId,
       ref: "Category",
-      required: true,
     },
     subcategory: {
       type: mongose.Schema.Types.ObjectId,
       ref: "Category",
-      required: true,
     },
     brand: {
       type: mongose.Schema.Types.ObjectId,
       ref: "Brand",
-      required: true,
     },
     image: [String],
     variations: [prosuctVariationSchema],
@@ -66,5 +68,10 @@ const productSchema = new mongose.Schema(
   },
   { timestamps: true }
 );
+
+productSchema.pre("save", async function (next) {
+  this.slug = slugify(this.name).toLowerCase();
+  next();
+});
 
 export const Product = mongose.model("Product", productSchema);

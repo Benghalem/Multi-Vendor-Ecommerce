@@ -11,6 +11,11 @@ import {
 /* ==========  Import API Routes ========== */
 import userRouter from "./src/routes/userRouter.js"; // import user router
 import vendorRouter from "./src/routes/vendorRouter.js"; // import vendor router
+import productRouter from "./src/routes/productRouter.js"; // import product router
+import brandRouter from "./src/routes/brandRouter.js"; // import brand router
+import categoryRouter from "./src/routes/categoryRouter.js";
+import subCategoryRouter from "./src/routes/subCategoryRouter.js";
+import wishlisteRouter from "./src/routes/wishlistRouter.js";
 
 /* ========  Load Environment Variables from .env file ======== */
 dotenv.config();
@@ -30,6 +35,11 @@ app.use(cors());
 /* ========== API Routes ============= */
 app.use("/api/user", userRouter);
 app.use("/api/vendor", vendorRouter);
+app.use("/api/product", productRouter);
+app.use("/api/brand", brandRouter);
+app.use("/api/wishlist", wishlisteRouter);
+app.use("/api/category", categoryRouter);
+app.use("/api/subcategory", subCategoryRouter);
 
 /*  ========== Error handling middleware  =========*/
 app.use(notFoundErrorhandler); // Not fount error handler
