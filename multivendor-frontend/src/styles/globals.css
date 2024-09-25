@@ -1,0 +1,54 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"); */
+
+@font-face {
+  font-family: "Mulish";
+  src: url("../pages/fonts/Mulish-VariableFont_wght.ttf");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fafafa;
+  --foreground: #fff;
+  --primary: #1455ac;
+  --secondary: #f5f5f5;
+  --border: #666;
+  --footer-top: #1455ac4d;
+  --footer: #1455ac;
+  --font-family: "Mulish", sans-serif;
+
+  /* 
+  --bs-primary: #1455ac;
+  --bs-primary-rgb: 20, 85, 172;
+  --primary-dark: #1455ac;
+  --primary-light: #fafafa;
+  --bs-secondary: #f58300;
+  --bs-secondary-rgb: 245, 131, 0;
+   */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --background: #fafafa; */
+    --background: #cbc6c6;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Mulish", sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.no-underline {
+  text-decoration: none;
+}

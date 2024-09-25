@@ -1,8 +1,11 @@
+============ Backend ==========================
+00)- npm init
+
 01)- creat express + db + what i need in backand folder
 
- 	- npm i express mongose cors bcrypt dotenv jsonwebtoken multer helmet morgan 
+ 	- npm i express mongose cors bcrypt dotenv jsonwebtoken multer helmet morgan cookie-parser
 
-02)- in package json add type: module
+02)- in package json add (type: module)
 
 03)- install nodemon : 
 	- npm i nodemon --save-dev
@@ -17,7 +20,7 @@
 	- npm i express-async-handler
 
 
-07)-  This happened probably because the MongoDB service isn't started. Follow the  	below steps to start it:
+07)-  This happened probably because the MongoDB service isn't started. Follow the below steps to start it:
 
       Press the Windows + R keys on your keyboard to open the Run window. Type 	services.msc and hit Enter on your keyboard or click/tap the OK button. A new 	window opens up. Search MongoDB.exe. Right click on it and select Start.
 
