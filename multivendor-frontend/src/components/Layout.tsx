@@ -6,6 +6,7 @@ import HeaderTop from "./HeaderTop";
 import Heaider from "./Header";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import FeatureDetails from "./FeatureDetails";
 
 interface LayoutProps {
   children: ReactNode;
@@ -19,6 +20,7 @@ export default function Layout({ children }: LayoutProps) {
       <Heaider />
       <Navbar />
       {children}
+      <FeatureDetails />
       <Footer />
     </>
   );

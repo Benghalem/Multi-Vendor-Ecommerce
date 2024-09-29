@@ -1,5 +1,5 @@
 /* import components */
-import CategoryDropdown from "@/components/CategoryDropdown";
+import CategoryDropdown from "@/components/hooks/CategoryDropdown";
 /* MUI Components */
 import {
   Box,
@@ -56,14 +56,14 @@ const responsive = {
 // Main Hero component
 const Hero = () => {
   return (
-    <Box className="my-4  px-0 sm:px-20  ">
+    <Box className="mt-4  px-0 sm:px-20  ">
       <Container maxWidth="xl">
         <Grid
           container
           className="bg-white py-8 px-4 rounded-md border border-background"
         >
           {/* Sidebar */}
-          <Grid item xs={3} className="hidden md:block">
+          <Grid item xs={3} className="hidden xl:block">
             <CategoryDropdown />
           </Grid>
           {/* Main Content */}
@@ -71,7 +71,7 @@ const Hero = () => {
             <Box className="flex flex-col space-y-4">
               <Grid container spacing={2} className="p-3 md:p-0">
                 {/* Carousel Section */}
-                <Grid item xs={12} md={8}>
+                <Grid item xs={12} md={12} lg={8}>
                   <Grid container spacing={3}>
                     <Grid item xs={12}>
                       <Carousel responsive={responsive} showDots>
@@ -114,9 +114,9 @@ const Hero = () => {
                 </Grid>
 
                 {/* Coupon Section */}
-                <Grid item xs={12} md={4}>
-                  <Card className="rounded-lg shadow p-4 bg-[#FAFAFA]">
-                    <CardContent>
+                <Grid item xs={12} lg={4} md={12}>
+                  <Card className="  rounded-lg shadow p-4 bg-[#FAFAFA] ">
+                    <CardContent className="flex flex-col">
                       <Typography variant="h6" className="text-primary">
                         Happy Club
                       </Typography>
@@ -125,7 +125,7 @@ const Hero = () => {
                         discounts from stores.
                       </Typography>
 
-                      <Box className="mt-4 space-y-4">
+                      <Box className="flex lg:flex-col  mt-4 space-y-4">
                         {coupons.map((coupon, index) => (
                           <Card key={index} className="border rounded-lg p-4">
                             <Typography variant="body1" className="font-bold">

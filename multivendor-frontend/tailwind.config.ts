@@ -17,6 +17,7 @@ const config: Config = {
       },
       backgroundImage: {
         "footer-img": "url('/assets/image/footer/footer-bg.png')",
+        "deals-img": "url('/assets/image/tody-deals-banner.png')",
       },
       fontFamily: {
         Mulish: ["Mulish", "sans-serif"],

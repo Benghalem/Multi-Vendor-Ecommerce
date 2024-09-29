@@ -74,7 +74,7 @@ const Footer = () => {
         {/* Hotline Section */}
         <Grid item xs={12} md={4} className="flex justify-end  items-center">
           <Phone className="mr-2" />
-          <Grid xs={12} md={6} className="flex flex-col items-start">
+          <Grid item xs={12} md={6} className="flex flex-col items-start">
             <Typography>Hotline </Typography>
             <Typography>+8801xxxxxxxxx</Typography>
           </Grid>
