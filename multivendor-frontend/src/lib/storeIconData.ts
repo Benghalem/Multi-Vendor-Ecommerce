@@ -1,7 +1,7 @@
-import { Store } from "@/types/index";
+import { StoreData } from "@/types/index";
 
 // Sample product data array
-const storeIcData: Store[] = [
+const storeIcData: StoreData[] = [
   {
     id: 1,
     storeName: "Digital Spot",
