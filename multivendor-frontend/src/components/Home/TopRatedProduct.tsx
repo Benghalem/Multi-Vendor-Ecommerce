@@ -7,7 +7,7 @@ import Carousel from "react-multi-carousel";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 // Sample  product data
-import productData from "@/lib/productData";
+import productData from "@/pages/api/productData";
 import ProductCard from "../hooks/ProductCard";
 
 // Carousel responsive settings

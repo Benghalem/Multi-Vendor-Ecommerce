@@ -5,7 +5,7 @@ import { Box, Container, Grid } from "@mui/material";
 /*  import icons */
 import { MdKeyboardArrowRight } from "react-icons/md";
 // Sample  product data
-import storeIcData from "@/lib/storeIconData";
+import storeIcData from "@/pages/api/storeIconData";
 
 const MoreStores = () => {
   return (
@@ -32,9 +32,9 @@ const MoreStores = () => {
           <Grid container spacing={4}>
             <Grid item xs={12}>
               <Box className="flex justify-center items-center gap-16 mt-6 ">
-                {storeIcData.map((store) => {
+                {storeIcData.map((store, index) => {
                   return (
-                    <div key={store.id} className="flex flex-col items-center">
+                    <div key={index} className="flex flex-col items-center">
                       <Image
                         src={store.imageUrl}
                         alt={store.storeName}

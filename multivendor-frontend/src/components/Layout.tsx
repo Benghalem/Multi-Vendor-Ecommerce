@@ -2,9 +2,9 @@ import { ReactNode } from "react";
 
 /* import components  */
 import PromoBanner from "./PromoBanner";
-import HeaderTop from "./HeaderTop";
-import Heaider from "./Header";
-import Navbar from "./Navbar";
+import HeaderTop from "./header/HeaderTop";
+import Heaider from "./header/Header";
+import Navbar from "./header/Navbar";
 import Footer from "./Footer";
 import FeatureDetails from "./FeatureDetails";
 

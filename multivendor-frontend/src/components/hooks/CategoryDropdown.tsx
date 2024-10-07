@@ -42,7 +42,7 @@ const categories: Category[] = [
   { name: "Audio" },
 ];
 
-const CategoryDropdown = () => {
+const CategoryDropdown = React.memo(() => {
   // state for managing popover open and close
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [currentSubcategories, setCurrentSubcategories] = useState<string[]>(
@@ -67,7 +67,7 @@ const CategoryDropdown = () => {
   const open = Boolean(anchorEl);
 
   return (
-    <Box className="px-2">
+    <Box>
       <List component={"nav"} className="space-y-0">
         {categories.map((item, index) => (
           <ListItem
@@ -116,13 +116,14 @@ const CategoryDropdown = () => {
         </Box>
       </Popover>
 
-      <Box className="px-4 py-2 flex justify-center">
+      <Box className="pl-4">
         <Typography className="text-primary cursor-pointer hover:underline">
           View all
         </Typography>
       </Box>
     </Box>
   );
-};
+});
 
-export default CategoryDropdown;
+CategoryDropdown.displayName = "CategoryDropdown";
+export default React.memo(CategoryDropdown);

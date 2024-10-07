@@ -1,6 +1,6 @@
 // Store type interface
 export interface StoreData {
-  id?: number;
+  storeId?: number;
   storeName: string;
   productNumper: number;
   imageUrl: string;

@@ -8,7 +8,7 @@ import Carousel from "react-multi-carousel";
 import CountdownTimer from "../hooks/CountDownTimer";
 import ProductCard from "../hooks/ProductCard";
 // Sample  product data
-import productData from "@/lib/productData";
+import productData from "@/pages/api/productData";
 
 // Carousel responsive settings
 const responsive = {

@@ -8,6 +8,7 @@ import {
   errorHandler,
   notFoundErrorhandler,
 } from "./src/middlewares/errorHandler.js"; // import error handler
+import { graphqlHTTP } from "express-graphql"; // import graphql
 
 /* ========== Start Import API Routes ========== */
 import userRouter from "./src/routes/userRouter.js"; // import user router
@@ -53,6 +54,36 @@ app.use("/api/support", supportRouter);
 /*  ========== Error handling middleware  =========*/
 app.use(notFoundErrorhandler); // Not fount error handler
 app.use(errorHandler);
+
+/* ==========  GraphQL    =========*/
+
+import { graphql, buildSchema } from "graphql";
+/* ==========  graphql    =========*/
+var rootValue = { hello: () => "Hello world!" };
+
+var schema = buildSchema(` 
+  type Query {
+      hello: String
+  }
+`);
+var source = `
+  {
+    hello
+  }
+`;
+
+graphql({ schema, source, rootValue }).then((result) => {
+  console.log(result);
+});
+
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema,
+    rootValue,
+    graphiql: true,
+  })
+);
 
 /* ==========  Start the server  =========*/
 const PORT = process.env.PORT || 8000;

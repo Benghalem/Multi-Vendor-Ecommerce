@@ -41,7 +41,7 @@
 }
 
 body {
-  color: var(--foreground);
+  /* color: var(--foreground); */
   background: var(--background);
   font-family: "Mulish", sans-serif;
 }

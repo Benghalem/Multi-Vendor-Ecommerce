@@ -11,7 +11,7 @@ import { Favorite, Sync, Visibility } from "@mui/icons-material";
 import { FaStar } from "react-icons/fa";
 
 // Product type interface
-import type Product from "@/types/ProductCard";
+import type { Product } from "@/types/ProductCard";
 
 // Product Card component
 const ProductCard: React.FC<Product> = ({
@@ -19,7 +19,7 @@ const ProductCard: React.FC<Product> = ({
   originalPrice,
   discountedPrice,
   discountPercentage,
-  imageUrl,
+  productImage,
   rating,
   reviews,
 }) => {
@@ -31,7 +31,7 @@ const ProductCard: React.FC<Product> = ({
           component="img"
           height={244}
           width={244}
-          image={imageUrl}
+          image={productImage}
           alt={productName}
           className="object-cover"
         />

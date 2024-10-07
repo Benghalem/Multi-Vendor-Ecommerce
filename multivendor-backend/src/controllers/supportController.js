@@ -1,6 +1,6 @@
 import { AppError } from "../middlewares/errorHandler.js";
 import { Support } from "../models/supportSchema.js";
-
+import expressAsyncHandler from "express-async-handler";
 // @desc Creat a new Support
 // @router /api/support/
 // @access Private

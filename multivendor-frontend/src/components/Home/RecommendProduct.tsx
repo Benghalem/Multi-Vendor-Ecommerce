@@ -9,7 +9,7 @@ import TabPanel from "@mui/lab/TabPanel";
 /* import components */
 import ProductCard from "../hooks/ProductCard";
 // Sample  product data
-import productData from "@/lib/productData";
+import productData from "@/pages/api/productData";
 import Link from "next/link";
 import { MdKeyboardArrowRight } from "react-icons/md";
 

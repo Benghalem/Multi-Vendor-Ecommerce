@@ -15,7 +15,7 @@ import {
 import { ArrowDropDown, Sort } from "@mui/icons-material";
 import { FaEye } from "react-icons/fa";
 /*  Example Data for Brands */
-import brandData from "@/lib/brandData";
+import brandData from "@/pages/api/brandData";
 
 export default function Brands() {
   /* State for managing popover open and close */
