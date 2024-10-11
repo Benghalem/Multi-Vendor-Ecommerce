@@ -1,48 +1,13 @@
 /* import components */
 import CategoryDropdown from "@/components/hooks/CategoryDropdown";
 /* MUI Components */
-import {
-  Box,
-  Typography,
-  Card,
-  CardContent,
-  CardMedia,
-  Grid,
-  Container,
-} from "@mui/material";
+import { Box, Card, CardMedia, Grid, Container } from "@mui/material";
 /* Carousel */
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-/* MUI Icons */
-
-interface Coupon {
-  title: string;
-  shop: string;
-  code: string;
-  icon: string;
-}
-
-// Sample coupons data
-const coupons: Coupon[] = [
-  {
-    title: "Free delivery",
-    shop: "TECH SHOP",
-    code: "pcuw655ytg",
-    icon: "fas fa-truck",
-  },
-  {
-    title: "$10.00 Off",
-    shop: "ALL SHOPS",
-    code: "856gmef66p",
-    icon: "fas fa-dollar-sign",
-  },
-  {
-    title: "75% Off",
-    shop: "TECH SHOP",
-    code: "Fhfx7XiCm",
-    icon: "fas fa-percentage",
-  },
-];
+import CouponSection from "../hooks/CouponSection";
+// Sample  product data
+import coupons from "@/pages/api/couponData";
 
 // Carousel responsive settings
 const responsive = {
@@ -56,25 +21,36 @@ const responsive = {
 // Main Hero component
 const Hero = () => {
   return (
-    <Box className="mt-4  px-0 sm:px-20  ">
+    <Box className="mt-4  px-0 lg:px-20  ">
       <Container maxWidth="xl">
         <Grid
           container
-          className="bg-white py-8 pr-4 rounded-md border border-background"
+          className="bg-white py-8 rounded-md border border-background"
         >
           {/* Sidebar */}
           <Grid item xs={3} className="hidden xl:block">
             <CategoryDropdown />
           </Grid>
           {/* Main Content */}
-          <Grid item xs={12} md={9}>
+          <Grid item xs={12} lg={9} className="">
             <Box className="flex flex-col space-y-4">
               <Grid container spacing={2} className="p-3 md:p-0">
                 {/* Carousel Section */}
                 <Grid item xs={12} md={12} lg={8}>
-                  <Grid container spacing={3}>
-                    <Grid item xs={12}>
-                      <Carousel responsive={responsive} showDots>
+                  <Grid
+                    container
+                    spacing={2}
+                    className="p-0 sm:p-5 flex items-center justify-center"
+                  >
+                    <Grid item xs={12} className=" ">
+                      <Carousel
+                        responsive={responsive}
+                        showDots
+                        autoPlay={true} /* Enable autoplay */
+                        autoPlaySpeed={3000} /* Set the autoplay speed in ms */
+                        infinite={true} /* Loop infinitely */
+                        keyBoardControl={true} /* Enable keyboard control */
+                      >
                         {[
                           "banner-l-image-2.png",
                           "banner-l-image-3.png",
@@ -92,7 +68,7 @@ const Hero = () => {
                       </Carousel>
                     </Grid>
                     {/* Other images */}
-                    <Grid item xs={6} lg={6}>
+                    <Grid item xs={6} lg={6} className="hidden sm:block">
                       <Card className="rounded-lg shadow">
                         <CardMedia
                           component="img"
@@ -101,7 +77,7 @@ const Hero = () => {
                         />
                       </Card>
                     </Grid>
-                    <Grid item xs={6} lg={6}>
+                    <Grid item xs={6} lg={6} className="hidden sm:block">
                       <Card className="rounded-lg shadow">
                         <CardMedia
                           component="img"
@@ -114,37 +90,8 @@ const Hero = () => {
                 </Grid>
 
                 {/* Coupon Section */}
-                <Grid item xs={12} lg={4} md={12}>
-                  <Card className="  rounded-lg shadow p-4 bg-[#FAFAFA] ">
-                    <CardContent className="flex flex-col">
-                      <Typography variant="h6" className="text-primary">
-                        Happy Club
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary">
-                        Collect coupons from stores and apply to get special
-                        discounts from stores.
-                      </Typography>
-
-                      <Box className="flex lg:flex-col  mt-4 space-y-4">
-                        {coupons.map((coupon, index) => (
-                          <Card key={index} className="border rounded-lg p-4">
-                            <Typography variant="body1" className="font-bold">
-                              {coupon.title} <i className={coupon.icon}></i>
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary">
-                              For {coupon.shop}
-                            </Typography>
-                            <Typography
-                              variant="body2"
-                              className="text-primary"
-                            >
-                              Code: {coupon.code}
-                            </Typography>
-                          </Card>
-                        ))}
-                      </Box>
-                    </CardContent>
-                  </Card>
+                <Grid item xs={12} lg={4} md={12} className="hidden sm:block ">
+                  <CouponSection coupons={coupons} />
                 </Grid>
               </Grid>
             </Box>

@@ -2,14 +2,14 @@ import Layout from "@/components/Layout";
 import { Box, Container } from "@mui/material";
 import Image from "next/image";
 
-const aboutUs = () => {
+const AboutUs = () => {
   return (
     <Layout>
       <Box className="relative bg-black mb-10">
         <Image
           src="/assets/image/about.png"
           alt="about"
-          width={40000}
+          width={1200} // Adjusted width for performance
           height={600}
           className="rounded-md opacity-50"
         />
@@ -250,4 +250,4 @@ const aboutUs = () => {
   );
 };
 
-export default aboutUs;
+export default AboutUs;

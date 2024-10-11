@@ -71,13 +71,9 @@ const recommendedProducts = [
 
 const BestDeal = () => {
   return (
-    <Box className="mt-4 px-0 sm:px-20 mb-4">
+    <Box className="mt-4 px-0 lg:px-12 mb-4">
       <Container maxWidth="xl">
-        <Grid
-          container
-          spacing={3}
-          className="p-4 lg:p-8 min-h-screen justify-center"
-        >
+        <Grid container spacing={3} className="p-4 lg:p-8  justify-center">
           {/* Best Deal Section */}
           <Grid item xs={12} lg={6}>
             <Card className="flex flex-col lg:flex-row shadow-lg p-4">
@@ -85,7 +81,7 @@ const BestDeal = () => {
                 <Typography variant="subtitle2" className="text-gray-500">
                   Don&apos;t Miss The Chance!
                 </Typography>
-                <Typography variant="h5" className="font-bold text-blue-600">
+                <Typography variant="h5" className="font-bold text-primary">
                   {bestDeal.title}
                 </Typography>
                 <Typography variant="body1" className="mt-2 text-gray-700">
@@ -116,7 +112,7 @@ const BestDeal = () => {
                   >
                     ${bestDeal.oldPrice.toFixed(2)}
                   </Typography>
-                  <Typography variant="h4" className="font-bold text-blue-600">
+                  <Typography variant="h4" className="font-bold text-primary">
                     ${bestDeal.newPrice.toFixed(2)}
                   </Typography>
                 </Box>
@@ -145,7 +141,7 @@ const BestDeal = () => {
           {/* Recommended Products Section */}
           <Grid item xs={12} lg={6}>
             <Card className="shadow-lg p-4">
-              <Typography variant="h6" className="font-bold text-blue-600">
+              <Typography variant="h6" className="font-bold text-primary">
                 Just For You
               </Typography>
               <Grid container spacing={2} className="mt-4">
@@ -153,7 +149,7 @@ const BestDeal = () => {
                   <Grid item xs={6} sm={4} key={index} className="text-center">
                     <Box className="relative">
                       {product.discount && (
-                        <Box className="absolute top-0 left-0 bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
+                        <Box className="absolute top-0 left-0 bg-primary text-white text-xs px-2 py-1 rounded-full">
                           - {product.discount}
                         </Box>
                       )}
@@ -173,7 +169,7 @@ const BestDeal = () => {
                           ${product.oldPrice.toFixed(2)}
                         </Typography>
                       )}
-                      <Typography variant="body1" className="text-blue-600">
+                      <Typography variant="body1" className="text-primary">
                         ${product.newPrice.toFixed(2)}
                       </Typography>
                     </Box>

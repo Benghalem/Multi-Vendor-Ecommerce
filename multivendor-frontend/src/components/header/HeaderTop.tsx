@@ -1,5 +1,6 @@
 import React, { useState, MouseEvent } from "react";
 /* import Image from "next/image"; */
+import { useRouter } from "next/router"; // Import useRouter
 /* import components from MUI library */
 import {
   Box,
@@ -28,7 +29,8 @@ export default function HeaderTop() {
   const [anchorElLanguage, setAnchorElLanguage] = useState<null | HTMLElement>(
     null
   );
-
+  // Get router instance
+  const router = useRouter();
   // Handlers for menu opening and closing with proper typing
   const handleCurrencyClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorElCurrency(event.currentTarget);
@@ -51,15 +53,15 @@ export default function HeaderTop() {
   return (
     <Box className="bg-[#fafafa] ">
       <Container maxWidth="xl">
-        <Box className="flex flex-col md:flex-row justify-between items-center px-0 sm:px-20   ">
+        <Box className="flex  justify-between px-0 xl:px-20   ">
           {/* Phone Section */}
-          <Box className="flex items-center mb-2 md:mb-0">
+          <Box className="flex items-center ">
             <IconButton>
-              <PhoneIcon className="text-primary mr-2" />
+              <PhoneIcon className="text-primary  text-[16px] sm:text-[20px] " />
             </IconButton>
             <Typography
               variant="body1"
-              className="text-black text-[13px] md:text-[14px]"
+              className="text-black text-[12px] md:text-[14px]"
             >
               +8801xxxxxxxxx
             </Typography>
@@ -71,7 +73,7 @@ export default function HeaderTop() {
             <Box className="flex items-center space-x-1">
               <Typography
                 variant="body1"
-                className="text-primary cursor-pointer text-[13px] md:text-[14px] "
+                className="text-primary cursor-pointer text-[12px] md:text-[14px] "
                 onClick={handleCurrencyClick}
               >
                 {currency}
@@ -83,7 +85,7 @@ export default function HeaderTop() {
               anchorEl={anchorElCurrency}
               open={Boolean(anchorElCurrency)}
               onClose={() => handleCurrencyClose(currency)}
-              className="text-[13px] md:text-[14px]"
+              className="text-[12px] md:text-[14px]"
             >
               <MenuItem onClick={() => handleCurrencyClose("USD $")}>
                 USD $
@@ -98,10 +100,10 @@ export default function HeaderTop() {
 
             {/* Language Dropdown */}
             <Box className="flex items-center space-x-1">
-              <Flag className="text-black cursor-pointer" />
+              <Flag className="text-black cursor-pointer text-[16px] sm:text-[20px] " />
               <Typography
                 variant="body1"
-                className="text-black cursor-pointer text-[13px] md:text-[14px]"
+                className="text-black cursor-pointer text-[12px] md:text-[14px]"
                 onClick={handleLanguageClick}
               >
                 {language}
@@ -125,8 +127,8 @@ export default function HeaderTop() {
             </Menu>
 
             <Typography
-              variant="body1"
-              className="text-black text-[13px] md:text-[14px]"
+              onClick={() => router.push("/become-a-vendor")}
+              className="text-black text-[12px] md:text-[14px] hidden xl:block cursor-pointer"
             >
               Become A Vendor
             </Typography>

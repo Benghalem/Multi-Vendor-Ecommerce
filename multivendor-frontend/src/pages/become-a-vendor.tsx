@@ -51,7 +51,7 @@ const BecomeAVendor: React.FC = () => {
                 item
                 xs={12}
                 md={4}
-                className="hidden md:flex pr-4 rounded-l-lg flex-col "
+                className="flex pr-4 rounded-l-lg flex-col "
               >
                 <Typography
                   variant="h4"
@@ -65,6 +65,7 @@ const BecomeAVendor: React.FC = () => {
                     Login
                   </a>
                 </Typography>
+                {/*  Illustration image    */}
                 <Image
                   src="/assets/icons/seller-registration.png"
                   width={400}
@@ -235,7 +236,7 @@ const BecomeAVendor: React.FC = () => {
                         type="submit"
                         variant="contained"
                         color="primary"
-                        className="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg"
+                        className="bg-primary hover:bg-blue-700 text-white py-2 rounded-lg "
                       >
                         Proceed To Next
                       </Button>
@@ -250,11 +251,14 @@ const BecomeAVendor: React.FC = () => {
             <Box textAlign="center" className="mb-8">
               <Typography
                 variant="h4"
-                className="font-medium text-gray-800 mb-4"
+                className="text-[24px] text-gray-800 mb-4"
               >
                 Why Sell With Us
               </Typography>
-              <Typography variant="body1" className="text-gray-600 mb-8">
+              <Typography
+                variant="body1"
+                className="text-gray-600 text-[14px] mb-8"
+              >
                 Boost your sales! Join us for a seamless, profitable experience
                 with vast buyer reach and top-notch support. Sell smarter today!
               </Typography>
@@ -264,7 +268,7 @@ const BecomeAVendor: React.FC = () => {
                   width={600}
                   height={400}
                   alt="Illustration of business people shaking hands with various icons around them"
-                  className="w-1/2"
+                  className="w-[395px] h-[350px] sm:w-[600px] sm:h-[400px]"
                 />
               </Box>
             </Box>
@@ -274,12 +278,15 @@ const BecomeAVendor: React.FC = () => {
                 {/* Easy Onboarding */}
                 <Grid item xs={12} md={3} className="flex-shrink-0">
                   <Box textAlign="center">
-                    <Typography variant="h6" className="text-gray-800 mb-2">
+                    <Typography
+                      variant="h6"
+                      className="text-gray-800 font-Mulish text-[18px] mb-2"
+                    >
                       Easy Onboarding
                     </Typography>
                     <Typography
                       variant="body2"
-                      className="text-gray-600 text-wrap"
+                      className="text-gray-600 text-wrap "
                     >
                       Start selling quickly with our user-friendly onboarding
                       process designed to get you up and running fast.
@@ -290,7 +297,10 @@ const BecomeAVendor: React.FC = () => {
                 {/* 24/7 Support */}
                 <Grid item xs={12} md={3} className="flex-shrink-0">
                   <Box textAlign="center">
-                    <Typography variant="h6" className="text-gray-800 mb-2">
+                    <Typography
+                      variant="h6"
+                      className="text-gray-800 text-[18px] mb-2"
+                    >
                       24/7 Support
                     </Typography>
                     <Typography
@@ -306,7 +316,10 @@ const BecomeAVendor: React.FC = () => {
                 {/* Secure Payments */}
                 <Grid item xs={12} md={3} className="flex-shrink-0">
                   <Box textAlign="center">
-                    <Typography variant="h6" className="text-gray-800 mb-2">
+                    <Typography
+                      variant="h6"
+                      className="text-gray-800 text-[18px] mb-2"
+                    >
                       Secure Payments
                     </Typography>
                     <Typography
@@ -322,7 +335,10 @@ const BecomeAVendor: React.FC = () => {
                 {/* Global Reach */}
                 <Grid item xs={12} md={3} className="flex-shrink-0">
                   <Box textAlign="center">
-                    <Typography variant="h6" className="text-gray-800 mb-2">
+                    <Typography
+                      variant="h6"
+                      className="text-gray-800 text-[18px] mb-2"
+                    >
                       Global Reach
                     </Typography>
                     <Typography

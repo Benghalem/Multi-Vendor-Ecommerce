@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const TodyDeals = () => {
   return (
-    <Box className="mt-4 px-0 sm:px-20 mb-4 ">
+    <Box className="mt-4 px-0 lg:px-20 mb-4 ">
       <Container maxWidth="xl">
         <Grid
           container

@@ -45,4 +45,24 @@ interface MoreItem {
   reviews: number;
 }
 
-export type { Product, ReviewsMembers, MoreItem };
+// taype for categories
+interface Categories {
+  title: string;
+  productsCount: number;
+  link: string;
+  items: {
+    name: string;
+    image: string;
+    quntite: number;
+    price: number;
+  }[];
+}
+
+interface Coupon {
+  title: string;
+  shop: string;
+  code: string;
+  icon: string;
+}
+
+export type { Product, ReviewsMembers, MoreItem, Categories, Coupon };

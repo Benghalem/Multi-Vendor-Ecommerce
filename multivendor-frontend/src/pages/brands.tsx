@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Layout from "@/components/Layout";
 /* import components from MUI library */
@@ -19,16 +19,36 @@ import brandData from "@/pages/api/brandData";
 
 export default function Brands() {
   /* State for managing popover open and close */
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [sortOption, setSortOption] = React.useState<string>("Default");
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [sortOption, setSortOption] = useState<string>("Default");
+
+  /* State for sorted brand data */
+  const [sortedBrands, setSortedBrands] = useState(brandData);
 
   // Handle dropdown open/close
   const handleOpenDropdown = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleCloseDropdown = (option: string) => {
     setSortOption(option);
     setAnchorEl(null);
+
+    // Sort brands based on selected option
+    let sortedData = [...brandData];
+    if (option === "A-Z") {
+      sortedData = sortedData.sort((a, b) =>
+        a.brandName.localeCompare(b.brandName)
+      );
+    } else if (option === "Z-A") {
+      sortedData = sortedData.sort((a, b) =>
+        b.brandName.localeCompare(a.brandName)
+      );
+    } else {
+      // Default sorting (use original data order or any default logic)
+      sortedData = brandData;
+    }
+    setSortedBrands(sortedData);
   };
 
   return (
@@ -76,10 +96,11 @@ export default function Brands() {
                   </Menu>
                 </div>
               </Box>
+
               {/* Brand List */}
               <Box className="bg-white p-4 rounded shadow-md">
                 <Grid container spacing={2}>
-                  {brandData.map((brand, index) => (
+                  {sortedBrands.map((brand, index) => (
                     <Grid
                       key={index}
                       item

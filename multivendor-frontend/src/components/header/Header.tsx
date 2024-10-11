@@ -53,11 +53,11 @@ const Header = () => {
   };
 
   return (
-    <Box className="bg-white">
+    <Box className="bg-white hidden xl:block">
       <Container maxWidth={"xl"}>
         <Box className="flex flex-col md:flex-row  items-center justify-between py-4 px-0 sm:px-20">
           {/* Logo Section */}
-          <Box className="flex items-center mb-4 md:mb-0">
+          <Box className=" flex items-center mb-4 md:mb-0">
             <ShoppingCart className="text-primary text-6xl" />
             <span className="ml-2 text-4xl font-bold text-primary">
               6Valley
@@ -100,8 +100,7 @@ const Header = () => {
           </Box>
 
           {/* Promotion Button Section */}
-
-          <Button className="bg-primary text-white rounded h-full px-6 py-2 text-center ">
+          <Button className="block bg-primary text-white rounded h-full px-6 py-2 text-center ">
             <Typography variant="body1" className="font-bold">
               GET 50% OFF
               <br />

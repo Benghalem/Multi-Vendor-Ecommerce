@@ -31,7 +31,7 @@ const Footer = () => {
       <Grid
         container
         alignItems="center"
-        className=" bg-primary py-5 px-28  opacity-95 "
+        className=" bg-primary py-5  px-28  opacity-95 "
       >
         {/* Logo Section */}
         <Grid item xs={12} md={4} className="flex  mb-4 md:mb-0">
@@ -232,7 +232,7 @@ const Footer = () => {
 
       {/* Scroll to Top Button */}
       <Box className="fixed bottom-4 right-4">
-        <IconButton className="bg-blue-500 text-white p-2 rounded-full">
+        <IconButton className="bg-primary text-white p-2 rounded-full">
           <ArrowUpward />
         </IconButton>
       </Box>

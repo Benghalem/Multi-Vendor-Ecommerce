@@ -68,7 +68,7 @@ const CategoryDropdown = React.memo(() => {
 
   return (
     <Box>
-      <List component={"nav"} className="space-y-0">
+      <Box className="space-y-0">
         {categories.map((item, index) => (
           <ListItem
             key={index}
@@ -89,8 +89,7 @@ const CategoryDropdown = React.memo(() => {
             )}
           </ListItem>
         ))}
-      </List>
-
+      </Box>
       {/* Popover for subcategories */}
       <Popover
         open={open}

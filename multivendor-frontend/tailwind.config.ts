@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "320px", // Custom breakpoint for extra small devices (phones)
+        sm: "480px", // Custom small devices (larger phones)
+        md: "768px", // Medium devices (tablets)
+        lg: "1024px", // Larger tablets/small desktops
+        xl: "1280px", // Custom large screens (laptops/desktops)
+        "2xl": "1536px", // Very large screens
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

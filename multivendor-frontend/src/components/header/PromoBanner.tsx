@@ -13,11 +13,11 @@ export default function PromoBanner() {
               component={"div"}
               className="flex justify-between items-center py-[6px] text-white "
             >
-              <IconButton className="text-white text-sm">
-                <Close />
+              <IconButton>
+                <Close className="text-white text-[16px] sm:text-[20px] cursor-pointer" />
               </IconButton>
               <Typography
-                className=" text-start md:text-center w-full"
+                className=" text-start md:text-center w-full text-[12px] sm:text-[14px] "
                 variant="body2"
               >
                 Get 50% discount in all product from june 2024 to December 2024

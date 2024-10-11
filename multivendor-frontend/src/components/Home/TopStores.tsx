@@ -1,16 +1,34 @@
+import { useRef } from "react";
 import Link from "next/link";
 /* import components from MUI library */
 import { Box, Container, Grid } from "@mui/material";
 /* import icons */
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import ProductStore from "../hooks/ProductStore";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+/*  Create Slider ref for Carousel */
+import Slider from "react-slick";
+// Sample categories data
+import categories from "@/pages/api/categories";
 
 const TopStores = () => {
-  /* props for handlind style and content */
+  /*  Create Slider ref for Carousel */
+  const sliderRef = useRef<Slider>(null);
+
+  /* Handle Previous and Next */
+  const handlePrev = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
+  };
+  const handleNext = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
+  };
 
   return (
-    <Box className="mt-4 px-0 sm:px-20 mb-4 ">
+    <Box className="mt-4 px-0 lg:px-20 mb-4 ">
       <Container maxWidth="xl">
         <Grid container className="bg-white p-4 rounded-md mb-6">
           {/* title Top Stores */}
@@ -30,16 +48,22 @@ const TopStores = () => {
                   View All <MdKeyboardArrowRight size={20} />
                 </Link>
               </Box>
-              <Box className="flex justify-center items-center w-[40px] h-[40px] rounded-md   bg-primary">
-                <FaArrowLeft />
+              <Box
+                className="flex justify-center items-center  w-[30px] h-[30px] sm:w-[40px] sm:h-[40px] rounded-xl text-white bg-primary cursor-pointer"
+                onClick={handlePrev}
+              >
+                <IoIosArrowBack />
               </Box>
-              <Box className="flex justify-center items-center w-[40px] h-[40px] rounded-md bg-primary">
-                <FaArrowRight />
+              <Box
+                className="flex justify-center items-center  w-[30px] h-[30px] sm:w-[40px] sm:h-[40px] text-white rounded-xl bg-primary cursor-pointer"
+                onClick={handleNext}
+              >
+                <IoIosArrowForward />
               </Box>
             </Box>
           </Grid>
-          <Grid container spacing={3}>
-            <ProductStore />
+          <Grid item xs={12}>
+            <ProductStore categories={categories} sliderRef={sliderRef} />
           </Grid>
         </Grid>
       </Container>

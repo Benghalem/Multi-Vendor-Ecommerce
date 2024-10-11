@@ -41,7 +41,7 @@ const ProductListing = () => {
     []
   );
 
-  // Filter products based on price range
+  /*  // Filter products based on price range
   const filteredProducts = useMemo(
     () =>
       productData.filter(
@@ -50,7 +50,7 @@ const ProductListing = () => {
           product.originalPrice <= selectedPriceRange[1]
       ),
     [selectedPriceRange]
-  );
+  ); */
 
   return (
     <Box className="w-full lg:w-1/4 bg-white p-4 rounded-lg text-black shadow-md mb-4 lg:mb-0">
