@@ -19,17 +19,6 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: "var(--primary)",
-        secondary: "var(--secondary)",
-        footer: "var(--footer)",
-        badge: "var(--bg-badge)",
-        primaryLight: "var(--primary-light)",
-        bsWhite: "var(--bs-white)",
-      },
-      backgroundImage: {
-        "footer-img": "url('/assets/image/footer/footer-bg.png')",
-        "deals-img": "url('/assets/image/tody-deals-banner.png')",
-        "store-background": "url('/assets/image/store-background.jpg')",
       },
       fontFamily: {
         Mulish: ["Mulish", "sans-serif"],

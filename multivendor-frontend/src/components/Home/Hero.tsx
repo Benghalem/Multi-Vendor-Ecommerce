@@ -25,7 +25,7 @@ const Hero = () => {
       <Container maxWidth="xl">
         <Grid
           container
-          className="bg-white py-8 rounded-md border border-background"
+          className="bg-white dark:bg-badge py-8 rounded-md border border-background"
         >
           {/* Sidebar */}
           <Grid item xs={3} className="hidden xl:block">

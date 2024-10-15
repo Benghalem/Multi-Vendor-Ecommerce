@@ -61,7 +61,7 @@ const servicesData = [
 
 const FeatureDetails = () => {
   return (
-    <Box className="flex flex-col md:flex-row justify-around items-center bg-white pt-4 pb-6 px-0 sm:px-20 space-y-4 md:space-y-0">
+    <Box className="flex flex-col md:flex-row justify-around items-center bg-white pt-4 pb-6  mt-4 px-0 lg:px-12 ">
       {/* Service Details */}
       <Container maxWidth="xl">
         <Grid container spacing={3}>

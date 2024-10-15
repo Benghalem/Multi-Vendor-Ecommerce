@@ -11,7 +11,7 @@ export default function PromoBanner() {
           <Grid item xs={12}>
             <Box
               component={"div"}
-              className="flex justify-between items-center py-[6px] text-white "
+              className="flex justify-between items-center py-[6px] text-white  "
             >
               <IconButton>
                 <Close className="text-white text-[16px] sm:text-[20px] cursor-pointer" />

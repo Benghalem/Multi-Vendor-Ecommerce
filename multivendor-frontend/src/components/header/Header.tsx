@@ -53,7 +53,7 @@ const Header = () => {
   };
 
   return (
-    <Box className="bg-white hidden xl:block">
+    <Box className="bg-white dark:bg-bsWhite hidden xl:block">
       <Container maxWidth={"xl"}>
         <Box className="flex flex-col md:flex-row  items-center justify-between py-4 px-0 sm:px-20">
           {/* Logo Section */}
@@ -71,7 +71,7 @@ const Header = () => {
               <Select
                 value={selectedCategory}
                 onChange={handleCategoryChange}
-                className="px-2 py-2 h-[45px] text-primary border-none rounded-r-none"
+                className="px-2 py-2 h-[45px] text-primary dark:text-white border-none rounded-r-none"
                 variant="outlined"
                 /* disableUnderline */
               >
@@ -86,6 +86,7 @@ const Header = () => {
                 value={searchInput}
                 onChange={handleSearchInputChange}
                 placeholder="Search for items..."
+                className=" dark:text-white"
               />
             </Box>
 

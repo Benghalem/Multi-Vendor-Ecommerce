@@ -26,30 +26,37 @@ import Image from "next/image";
  */
 const Footer = () => {
   return (
-    <footer className=" text-white bg-footer-img  bg-cover">
+    <footer className=" text-white bg-footer-img  bg-cover  ">
       {/* Top Section: Logo, Social Links, Hotline */}
       <Grid
         container
-        alignItems="center"
-        className=" bg-primary py-5  px-28  opacity-95 "
+        spacing={1}
+        className="  bg-primary py-5  px-28 sm:px-8 opacity-95    lg:px-20"
       >
         {/* Logo Section */}
-        <Grid item xs={12} md={4} className="flex  mb-4 md:mb-0">
+        <Grid
+          item
+          sm={2.5}
+          xs={12}
+          md={4}
+          className="flex justify-center items-center lg:justify-normal   mb-4 md:mb-0"
+        >
           <Image
             src="/assets/image/footer/logo-footer.png"
             alt="6Valley logo"
             width={185}
             height={100}
-            className="mr-2"
+            className="mr-2 w-[auto] h-[ auto] md:w-[111px] md:h-[34px] lg:w-[auto] lg:h-[auto] "
           />
         </Grid>
 
         {/* Social Media Links */}
         <Grid
           item
+          sm={6.5}
           xs={12}
           md={4}
-          className="flex justify-center md:justify-end space-x-4 mb-4 md:mb-0"
+          className="flex justify-center  md:justify-center space-x-2 mb-4 md:mb-0"
         >
           <IconButton className="text-white">
             <Twitter />
@@ -72,9 +79,20 @@ const Footer = () => {
         </Grid>
 
         {/* Hotline Section */}
-        <Grid item xs={12} md={4} className="flex justify-end  items-center">
+        <Grid
+          item
+          sm={3}
+          xs={12}
+          md={4}
+          className="flex justify-center  items-center  lg:justify-end"
+        >
           <Phone className="mr-2" />
-          <Grid item xs={12} md={6} className="flex flex-col items-start">
+          <Grid
+            item
+            xs={12}
+            md={6}
+            className="flex flex-col item-center justify-center  lg:items-start"
+          >
             <Typography>Hotline </Typography>
             <Typography>+8801xxxxxxxxx</Typography>
           </Grid>
@@ -83,7 +101,7 @@ const Footer = () => {
       {/* Middle Section */}
       <Container
         maxWidth="xl"
-        className="px-4 pb-8 sm:px-12 md:px-[115px] bg-footer opacity-90  "
+        className="px-4 pb-8 sm:px-12  bg-footer opacity-90  lg:px-20 "
       >
         {/* Middle Section: Footer Links */}
         <Grid
@@ -95,62 +113,68 @@ const Footer = () => {
         >
           {/* Address & Contact */}
           {/* /* justify-center items-center */}
-          <Grid
-            item
-            xs={12}
-            md={4}
-            className="flex flex-col justify-center items-center md:items-start md:justify-normal  mb-4 md:mb-0"
-          >
-            <Typography>Kingston, New York 12401 United States</Typography>
-            <Typography>j*********@6amtech.com</Typography>
-            <Box className="flex mt-4">
-              <Image
-                src="/assets/image/footer/google-play.png"
-                alt="Google Play"
-                width={180}
-                height={120}
-                className="mr-2"
-              />
-              <Image
-                src="/assets/image/footer/app-store.png"
-                width={180}
-                height={120}
-                alt="App Store"
-              />
-            </Box>
-            {/* Newsletter Section */}
-            <Box className="mt-10">
-              <Typography variant="h6" className="font-bold mb-4">
-                NEWSLETTER
-              </Typography>
-              <Typography>
-                Subscribe to our newsletter to get the latest updates
-              </Typography>
-              <Box className="flex mt-1">
-                <TextField
-                  type="email"
-                  placeholder="Enter your email"
-                  className="rounded-md bg-white w-full"
-                  sx={{ flexGrow: 1 }}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <Button
-                          variant="contained"
-                          className="bg-primary rounded-r-md text-white h-10 lowercase "
-                        >
-                          Submit
-                        </Button>
-                      </InputAdornment>
-                    ),
-                  }}
+          <Grid item xs={12} md={4} className="mb-4">
+            <Grid
+              item
+              xs={12}
+              md={7}
+              className="flex flex-col justify-center items-center lg:items-start lg:justify-normal  mb-4 lg:mb-0"
+            >
+              <Typography>Kingston, New York 12001 United States</Typography>
+              <Typography>b*********@gemail.com</Typography>
+              <Box className="flex mt-4 mb-4">
+                <Image
+                  src="/assets/image/footer/google-play.png "
+                  alt="Google Play"
+                  width={180}
+                  height={120}
+                  className="mr-2 w-[auto] h-[auto] sm:w-[150px] md:h-[46px] "
+                />
+                <Image
+                  src="/assets/image/footer/app-store.png"
+                  width={180}
+                  height={120}
+                  alt="App Store"
+                  className="w-[auto] h-[auto] sm:w-[150px] md:h-[46px] "
                 />
               </Box>
-            </Box>
+            </Grid>
+            <Grid item xs={12} md={12}>
+              {/* Newsletter Section */}
+              <Box className=" flex flex-col">
+                <Typography variant="h6" className=" mb-2">
+                  NEWSLETTER
+                </Typography>
+                <Typography>
+                  Subscribe to our newsletter to get the latest updates
+                </Typography>
+                <Box className="flex mt-1">
+                  <TextField
+                    type="email"
+                    fullWidth
+                    placeholder="Enter your email"
+                    className="rounded-md bg-white w-full"
+                    sx={{ flexGrow: 1 }}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <Button
+                            variant="contained"
+                            className="bg-primary rounded-r-md text-white h-10 lowercase "
+                          >
+                            Submit
+                          </Button>
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                </Box>
+              </Box>
+            </Grid>
           </Grid>
 
           {/* Accounts Links */}
-          <Grid item xs={12} md={2}>
+          <Grid item xs={4} md={2}>
             <Typography variant="h6" className="font-bold mb-4">
               Accounts
             </Typography>
@@ -171,7 +195,7 @@ const Footer = () => {
           </Grid>
 
           {/* Quick Links */}
-          <Grid item xs={12} md={2}>
+          <Grid item xs={4} md={2}>
             <Typography variant="h6" className="font-bold mb-4">
               Quick Links
             </Typography>
@@ -195,8 +219,8 @@ const Footer = () => {
           </Grid>
 
           {/* Other Links */}
-          <Grid item xs={12} md={2}>
-            <Typography variant="h6" className="font-bold mb-4">
+          <Grid item xs={4} md={2}>
+            <Typography variant="h6" className="font-semibold mb-4">
               Other
             </Typography>
             <ul>

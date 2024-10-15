@@ -51,17 +51,17 @@ export default function HeaderTop() {
   };
 
   return (
-    <Box className="bg-[#fafafa] ">
+    <Box className="bg-[#fafafa]  dark:bg-primaryLight">
       <Container maxWidth="xl">
         <Box className="flex  justify-between px-0 xl:px-20   ">
           {/* Phone Section */}
           <Box className="flex items-center ">
             <IconButton>
-              <PhoneIcon className="text-primary  text-[16px] sm:text-[20px] " />
+              <PhoneIcon className="text-primary dark:text-white text-[16px] sm:text-[20px] " />
             </IconButton>
             <Typography
               variant="body1"
-              className="text-black text-[12px] md:text-[14px]"
+              className="text-black dark:text-white text-[12px] md:text-[14px]"
             >
               +8801xxxxxxxxx
             </Typography>
@@ -73,13 +73,13 @@ export default function HeaderTop() {
             <Box className="flex items-center space-x-1">
               <Typography
                 variant="body1"
-                className="text-primary cursor-pointer text-[12px] md:text-[14px] "
+                className="text-primary dark:text-white cursor-pointer text-[12px] md:text-[14px] "
                 onClick={handleCurrencyClick}
               >
                 {currency}
               </Typography>
 
-              <ArrowDropDownIcon className="text-black cursor-pointer" />
+              <ArrowDropDownIcon className="text-black dark:text-white cursor-pointer" />
             </Box>
             <Menu
               anchorEl={anchorElCurrency}
@@ -99,16 +99,16 @@ export default function HeaderTop() {
             </Menu>
 
             {/* Language Dropdown */}
-            <Box className="flex items-center space-x-1">
-              <Flag className="text-black cursor-pointer text-[16px] sm:text-[20px] " />
+            <Box className="flex items-center space-x-1 text-black dark:text-white">
+              <Flag className=" cursor-pointer text-[16px] sm:text-[20px] " />
               <Typography
                 variant="body1"
-                className="text-black cursor-pointer text-[12px] md:text-[14px]"
+                className=" cursor-pointer text-[12px] md:text-[14px]"
                 onClick={handleLanguageClick}
               >
                 {language}
               </Typography>
-              <ArrowDropDownIcon className="text-black cursor-pointer" />
+              <ArrowDropDownIcon className="cursor-pointer" />
             </Box>
             <Menu
               anchorEl={anchorElLanguage}
@@ -128,7 +128,7 @@ export default function HeaderTop() {
 
             <Typography
               onClick={() => router.push("/become-a-vendor")}
-              className="text-black text-[12px] md:text-[14px] hidden xl:block cursor-pointer"
+              className=" text-[12px] md:text-[14px] hidden xl:block cursor-pointer text-black dark:text-white"
             >
               Become A Vendor
             </Typography>
